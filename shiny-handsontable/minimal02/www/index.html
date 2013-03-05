@@ -38,6 +38,22 @@
       });
     });//]]>  
   
+  
+  
+$(document).ready(function () {
+
+  function bindDumpButton() {
+    $('body').on('click', 'button[name=dump]', function () {
+      var dump = $(this).data('dump');
+      var $container = $(dump);
+      console.log('data of ' + dump, $container.handsontable('getData'));
+    });
+  }
+  bindDumpButton();
+  
+});
+  
+  
   </script>
   
 </head>
@@ -54,7 +70,7 @@
   <pre id="table_text" class="shiny-text-output"></pre>
   
   <p>
-  <button name="dump" data-dump="#example1" title="Prints current data source to Firebug/Chrome Dev Tools">Dump data to console</button>
+  <button name="dump" data-dump="#exampleGrid" title="Prints current data source to Firebug/Chrome Dev Tools">Dump data to console</button>
 </p>
   
  
